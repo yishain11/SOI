@@ -18,7 +18,7 @@ public class Soldier
                 break;
         }
     }
-    // problems - need to edit exsiting working code
+    // problems - need to edit exsiting working code to add more firing options
 
     // option 2 - open and closed. make the code extenable
 

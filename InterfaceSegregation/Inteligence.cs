@@ -32,6 +32,10 @@ public abstract class BaseMsg {
         _creator = creator;
         _creationDate = creationDate;
     }
+
+    public void showCreator() {
+        Console.WriteLine($"creator is: {this._creator}");
+    }
 }
 
 public class ImportantMsg: BaseMsg {
@@ -58,5 +62,16 @@ public class RegularMsg: BaseMsg {
 
     public void Shout() {
         Console.WriteLine($"msg  is: {this._content.ToUpper()}");
+    }
+}
+
+// problem - if we want to provide a service:
+public class MessageProcessor
+{
+    public void HandleEncryption(BaseMsg msg)
+    {
+        // show creator
+        Console.WriteLine(m);
+        msg.Encrypt(); // ❌ won't compile – not all messages encrypt
     }
 }
