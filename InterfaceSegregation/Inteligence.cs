@@ -71,7 +71,7 @@ public class MessageProcessor
     public void HandleEncryption(BaseMsg msg)
     {
         // show creator
-        Console.WriteLine(m);
+        Console.WriteLine(msg);
         msg.Encrypt(); // ❌ won't compile – not all messages encrypt
     }
 }
