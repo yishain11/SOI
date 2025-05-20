@@ -75,3 +75,31 @@ public class MessageProcessor
         msg.Encrypt(); // ❌ won't compile – not all messages encrypt
     }
 }
+
+// how to solve? 
+// one way - handleEcryption for everytype of class
+// problem - duplication
+
+// another solution - segregate interfaces
+
+
+// Interface segregation for capabilities
+public interface IEncryptable
+{
+    void Encrypt();
+}
+
+public interface IDestructible
+{
+    void Destroy();
+}
+
+public interface IReadable
+{
+    void Read();
+}
+
+public interface IShoutable
+{
+    void Shout();
+}
