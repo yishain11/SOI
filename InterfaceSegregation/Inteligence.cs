@@ -76,6 +76,7 @@ public class MessageProcessor
     }
 }
 
+// solution - using interface:
 // how to solve? 
 // one way - handleEcryption for everytype of class
 // problem - duplication
@@ -103,3 +104,31 @@ public interface IShoutable
 {
     void Shout();
 }
+
+// now the processor:
+public class MessageProcessor
+{
+    public void HandleEncryption(IEncryptable msg)
+    {
+        msg.Encrypt();
+    }
+
+    public void HandleDestruction(IDestructible msg)
+    {
+        msg.Destroy();
+    }
+
+    public void HandleReading(IReadable msg)
+    {
+        msg.Read();
+    }
+
+    public void HandleShouting(IShoutable msg)
+    {
+        msg.Shout();
+    }
+}
+
+// what is the diff from just using methods that accept diff classes?
+// because if we have a new class that also has encrypt - we will need another method
+// if we use interface - we can add as many new classes as we like 
